@@ -17,18 +17,19 @@
 }
 
 .historia-quote {
-    background-color: var(--color-accent1);
+    background-color: rgba(252, 239, 156, 0.3); /* Amarillo más suave */
     padding: 2rem;
     border-radius: 10px;
     margin: 2rem 0;
     border-left: 4px solid var(--color-accent3);
+    backdrop-filter: blur(5px);
 }
 
 .historia-quote p {
     font-family: 'Playfair Display', serif;
     font-size: 1.3rem;
     font-style: italic;
-    color: var(--color-secondary);
+    color: var(--color-secondary); /* Texto en marrón oscuro */
 }
 
 .historia-images {
