@@ -1,6 +1,7 @@
 .hero-section {
     padding: 120px 0 80px;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #5A1A1C 100%);
+    /* Cambié el celeste por colores de tu marca */
     color: var(--color-white);
     position: relative;
     overflow: hidden;
@@ -29,7 +30,7 @@
 
 .cta-button {
     display: inline-block;
-    background-color: var(--color-accent2);
+    background-color: var(--color-accent2); /* Color bordo */
     color: var(--color-white);
     padding: 12px 30px;
     border-radius: 30px;
@@ -41,7 +42,8 @@
 
 .cta-button:hover {
     background-color: transparent;
-    border-color: var(--color-white);
+    border-color: var(--color-accent1); /* Amarillo suave en hover */
+    color: var(--color-accent1);
 }
 
 .hero-image {
