@@ -1,16 +1,23 @@
 /* Variables y estilos base */
 :root {
-    --color-primary: #6BA1D1;
-    --color-secondary: #3F1719;
-    --color-accent1: #FCEF9C;
-    --color-accent2: #BA2339;
-    --color-accent3: #E8B666;
+    --color-primary: #6BA1D1;    /* Azul - usar solo para acentos menores */
+    --color-secondary: #3F1719;  /* Marrón oscuro - principal */
+    --color-accent1: #FCEF9C;    /* Amarillo suave */
+    --color-accent2: #BA2339;    /* Bordo - botones y elementos importantes */
+    --color-accent3: #E8B666;    /* Naranja dorado - detalles */
     --color-text: #333333;
     --color-light: #F8F5F0;
     --color-white: #FFFFFF;
     --color-gray: #666666;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
+}
+/* Asegurar que los enlaces usen colores de marca */
+.nav-link:hover {
+    color: var(--color-accent2); /* Bordo en hover */
+}
+.nav-link::after {
+    background-color: var(--color-accent2); /* Subrayado bordo */
 }
 
 * {
