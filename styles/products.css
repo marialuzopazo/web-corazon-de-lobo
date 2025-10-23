@@ -91,17 +91,17 @@
 
 .producto-cta {
     display: inline-block;
-    background-color: var(--color-primary);
+    background-color: var(--color-accent2); /* Color bordo */
     color: var(--color-white);
     padding: 10px 20px;
     border-radius: 25px;
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
-    border: 2px solid var(--color-primary);
+    border: 2px solid var(--color-accent2);
 }
 
 .producto-cta:hover {
     background-color: transparent;
-    color: var(--color-primary);
+    color: var(--color-accent2); /* Texto bordo sobre fondo blanco */
 }
