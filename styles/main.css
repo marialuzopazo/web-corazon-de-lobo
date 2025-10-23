@@ -1,0 +1,68 @@
+/* Variables y estilos base */
+:root {
+    --color-primary: #6BA1D1;
+    --color-secondary: #3F1719;
+    --color-accent1: #FCEF9C;
+    --color-accent2: #BA2339;
+    --color-accent3: #E8B666;
+    --color-text: #333333;
+    --color-light: #F8F5F0;
+    --color-white: #FFFFFF;
+    --color-gray: #666666;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    color: var(--color-text);
+    line-height: 1.6;
+    background-color: var(--color-light);
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--color-secondary);
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent2), var(--color-accent3));
+    margin: 0.5rem auto;
+    border-radius: 2px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--color-gray);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
