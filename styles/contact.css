@@ -86,7 +86,7 @@
     text-align: center;
 }
 
-/* ESTILOS CORREGIDOS PARA REDES SOCIALES */
+/* ESTILOS CORREGIDOS PARA REDES SOCIALES - VERSIÓN SIMPLIFICADA */
 .social-links {
     text-align: center;
     padding: 1.5rem;
@@ -127,39 +127,41 @@
 }
 
 .social-link:hover {
-    transform: translateY(-5px) scale(1.1);
+    transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(186, 35, 57, 0.4);
 }
 
-/* ESTILOS PARA LAS IMÁGENES DE ICONOS */
+/* ESTILOS MEJORADOS PARA LAS IMÁGENES DE ICONOS */
 .social-icon-img {
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
-    filter: brightness(0) invert(1); /* Convierte iconos a blanco */
     transition: all 0.3s ease;
-    z-index: 2;
-    position: relative;
+    display: block;
 }
 
-.social-link:hover .social-icon-img {
-    transform: scale(1.2);
+/* Si las imágenes no cargan, mostramos texto de respaldo */
+.social-link::after {
+    content: attr(aria-label);
+    position: absolute;
+    font-size: 0;
+    opacity: 0;
 }
 
-/* Colores específicos para cada red social en hover */
-.social-link:nth-child(1):hover { /* Instagram */
+/* Colores específicos para cada red social */
+.social-link[aria-label="Instagram"]:hover {
     background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
 }
 
-.social-link:nth-child(2):hover { /* Facebook */
+.social-link[aria-label="Facebook"]:hover {
     background: linear-gradient(135deg, #1877F2, #0D5FD7);
 }
 
-.social-link:nth-child(3):hover { /* TikTok */
+.social-link[aria-label="TikTok"]:hover {
     background: linear-gradient(135deg, #000000, #69C9D0, #EE1D52);
 }
 
-.social-link:nth-child(4):hover { /* WhatsApp */
+.social-link[aria-label="WhatsApp"]:hover {
     background: linear-gradient(135deg, #25D366, #128C7E);
 }
 
@@ -234,7 +236,6 @@
 .footer-social-icon {
     width: 20px;
     height: 20px;
-    filter: brightness(0) invert(1);
     transition: var(--transition);
 }
 
@@ -272,8 +273,8 @@
     }
     
     .social-icon-img {
-        width: 20px;
-        height: 20px;
+        width: 24px;
+        height: 24px;
     }
     
     .social-links h3 {
@@ -304,8 +305,8 @@
     }
     
     .social-icon-img {
-        width: 18px;
-        height: 18px;
+        width: 20px;
+        height: 20px;
     }
     
     .social-text {
@@ -315,5 +316,4 @@
     .info-card {
         padding: 1.5rem;
     }
-}
 }
