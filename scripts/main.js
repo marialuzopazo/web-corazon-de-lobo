@@ -25,22 +25,33 @@ document.addEventListener('DOMContentLoaded', function() {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // Configuración de EmailJS
-            emailjs.init("service_euok49g"); // Reemplazar con tu User ID de EmailJS
+            // Mostrar mensaje de carga
+            const submitBtn = this.querySelector('.submit-button');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+            
+            // Configuración de EmailJS con tu Service ID
+            emailjs.init("service_euok49g");
             
             // Enviar el formulario
-            emailjs.sendForm('service_euok49g', 'tu_template_id', this)
+            emailjs.sendForm('service_euok49g', 'template_9k8a6pr', this)
                 .then(function() {
                     alert('¡Gracias por tu consulta! Te contactaremos pronto.');
                     contactForm.reset();
                 }, function(error) {
-                    alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');
-                    console.error('Error:', error);
+                    alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente o contactanos directamente por WhatsApp.');
+                    console.error('Error EmailJS:', error);
+                })
+                .finally(function() {
+                    // Restaurar botón
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
                 });
         });
     }
     
-    // Scroll
+    // Scroll para header
     window.addEventListener('scroll', function() {
         const header = document.querySelector('.main-header');
         if (window.scrollY > 100) {
