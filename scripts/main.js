@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             // Configuración de EmailJS
-            emailjs.init("luzenux@hotmail.com"); // Reemplazar con tu User ID de EmailJS
+            emailjs.init("service_euok49g"); // Reemplazar con tu User ID de EmailJS
             
             // Enviar el formulario
-            emailjs.sendForm('tu_service_id', 'tu_template_id', this)
+            emailjs.sendForm('service_euok49g', 'tu_template_id', this)
                 .then(function() {
                     alert('¡Gracias por tu consulta! Te contactaremos pronto.');
                     contactForm.reset();
