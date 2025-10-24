@@ -1,4 +1,4 @@
-// el menu del celu 
+// Menu del celu 
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navList = document.querySelector('.nav-list');
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // cerrar el menu 
+    // Cerrar el menu 
     const navLinks = document.querySelectorAll('.nav-link');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
@@ -19,17 +19,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Form 
+    // Form funcional con EmailJS
     const contactForm = document.getElementById('contactForm');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('¡Gracias por tu consulta! Te contactaremos pronto.');
-            this.reset();
+            
+            // Configuración de EmailJS
+            emailjs.init("luzenux@hotmail.com"); // Reemplazar con tu User ID de EmailJS
+            
+            // Enviar el formulario
+            emailjs.sendForm('tu_service_id', 'tu_template_id', this)
+                .then(function() {
+                    alert('¡Gracias por tu consulta! Te contactaremos pronto.');
+                    contactForm.reset();
+                }, function(error) {
+                    alert('Hubo un error al enviar el mensaje. Por favor, intenta nuevamente.');
+                    console.error('Error:', error);
+                });
         });
     }
     
-    // scroll
+    // Scroll
     window.addEventListener('scroll', function() {
         const header = document.querySelector('.main-header');
         if (window.scrollY > 100) {
