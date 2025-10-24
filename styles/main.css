@@ -12,13 +12,6 @@
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     --transition: all 0.3s ease;
 }
-/* Asegurar que los enlaces usen colores de marca */
-.nav-link:hover {
-    color: var(--color-accent2); /* Bordo en hover */
-}
-.nav-link::after {
-    background-color: var(--color-accent2); /* Subrayado bordo */
-}
 
 * {
     margin: 0;
@@ -31,6 +24,9 @@ body {
     color: var(--color-text);
     line-height: 1.6;
     background-color: var(--color-light);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
@@ -72,4 +68,17 @@ body {
 /* Smooth scrolling */
 html {
     scroll-behavior: smooth;
+}
+
+/* Asegurar que los enlaces usen colores de marca */
+.nav-link:hover {
+    color: var(--color-accent2); /* Bordo en hover */
+}
+.nav-link::after {
+    background-color: var(--color-accent2); /* Subrayado bordo */
+}
+
+/* Asegurar que el contenido principal ocupe todo el espacio disponible */
+main {
+    flex: 1;
 }
